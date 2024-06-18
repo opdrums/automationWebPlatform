@@ -1,0 +1,15 @@
+
+CASOS FALLIDOS EN LA REGRESIÓN AUTOMATIZADA:
+
+MODULO: Pibox --> ESCENARIO: hacer login como usuario
+MODULO: Pibox --> ESCENARIO: hacer login como usuario
+MODULO: Pibox --> ESCENARIO: hacer login como usuario
+MODULO: Pibox --> ESCENARIO: hacer login como usuario
+MODULO: Pibox --> ESCENARIO: hacer login como usuario
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user
+MODULO: Pibox --> ESCENARIO: Register user

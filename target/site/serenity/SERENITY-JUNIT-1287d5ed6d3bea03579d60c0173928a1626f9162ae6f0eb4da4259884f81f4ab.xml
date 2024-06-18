@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="yo como automatixador quiero abrir el browser" skipped="0" tests="1" time="14.48" timestamp="2024-06-17 01:19:27"><testcase name=""><error type="java.lang.NullPointerException"/><system-err>null
+utils.reporting.Reporte.reports(Reporte.java:29)
+definitions.hooks.terminar(hooks.java:38)
+cucumber.runner.UnskipableStep.executeStep(UnskipableStep.java:22)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+runners.RunnerPersonalizado.run(RunnerPersonalizado.java:52)
+</system-err></testcase></testsuite>
