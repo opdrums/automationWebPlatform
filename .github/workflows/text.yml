@@ -33,15 +33,15 @@ jobs:
 
       - name: Test open browser
         run: |
-          mvn clean verify -Dtags='@openWeb'
+          mvn clean verify -Dtags='openWeb'
           echo "Test finalizado, revise el reporte"
 
       - name: Test login user
         run: |
-          mvn clean verify -Dtags='@login'
+          mvn clean verify -Dtags='login'
           echo "Test finalizado, revise el reporte"
 
       - name: Test register user
         run: |
-          mvn clean verify -Dtags='@register'
+          mvn clean verify -Dtags='register'
           echo "Test finalizado, revise el reporte"
