@@ -4,10 +4,14 @@ on:
   push:
     branches: [ master ]
 
+orbs:
+  browser-tools: circleci/browser-tools@1.1
+
 jobs:
   build:
-
     runs-on: macos-latest
+    docker:
+      - image: cimg/openjdk:11.0.16-browsers
 
     steps:
       - browser-tools/install-browser-tools
