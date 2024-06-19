@@ -5,13 +5,13 @@
     <groupId>app.pibox</groupId>
     <artifactId>orange</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>automatiocion tarea</name>
+    <name>automation work</name>
     <description>Proyecto de automatización plataforma</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <serenity.version>2.1.2</serenity.version>
         <serenity-cucumber.version>1.9.51</serenity-cucumber.version>
