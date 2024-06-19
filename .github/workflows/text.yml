@@ -10,6 +10,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - browser-tools/install-browser-tools
+      - checkout
+
       - name: Check out repository
         uses: actions/checkout@v2
 
@@ -17,7 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
-          java-version: '8'
+          java-version: '11'
 
       - name: Cache Maven packages
         uses: actions/cache@v2
@@ -36,4 +39,16 @@ jobs:
         run:  
           set +e
           mvn clean verify -Dtags='@openWeb'
+          echo Test finalizado, revise el reporte
+
+      - name: test login user
+        run:
+          set +e
+          mvn clean verify -Dtags='@login'
+          echo Test finalizado, revise el reporte
+
+      - name: test resgister user
+        run:
+          set +e
+          mvn clean verify -Dtags='@register'
           echo Test finalizado, revise el reporte
