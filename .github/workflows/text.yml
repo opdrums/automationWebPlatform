@@ -5,52 +5,47 @@ on:
     branches: [ master ]
 
 jobs:
-  test one:
-    build:
-      runs-on: macos-latest
+  build:
+    runs-on: macos-latest
 
-      steps:
+    steps:
 
-        - name: Check out repository
-          uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-        - name: Set up JDK
-          uses: actions/setup-java@v2
-          with:
-            distribution: 'adopt'
-            java-version: '11'
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
 
-        - name: Cache Maven packages
-          uses: actions/cache@v2
-          with:
-            path: ~/.m2/repository
-            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-            restore-keys: ${{ runner.os }}-maven
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven
 
-        - name: Display Maven version
-          run: mvn -v
+      - name: Display Maven version
+        run: mvn -v
 
-        - name: Build with Maven
-          run: mvn -B package --file pom.xml
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
 
-        - name: test open browser
-          run:
-            set +e
-            mvn clean verify -Dtags='@openWeb'
-            echo Test finalizado, revise el reporte
+      - name: test open browser
+        run:
+          set +e
+          mvn clean verify -Dtags='@openWeb'
+          echo Test finalizado, revise el reporte
 
-        - name: test login user
-          run:
-            set +e
-            mvn clean verify -Dtags='@login'
-            echo Test finalizado, revise el reporte
+      - name: test login user
+        run:
+          set +e
+          mvn clean verify -Dtags='@login'
+          echo Test finalizado, revise el reporte
 
-        - name: test resgister user
-          run:
-            set +e
-            mvn clean verify -Dtags='@register'
-            echo Test finalizado, revise el reporte
-workflows:
-  test Atumation web:
-    jobs:
-      -test one
+      - name: test resgister user
+        run:
+          set +e
+          mvn clean verify -Dtags='@register'
+          echo Test finalizado, revise el reporte
