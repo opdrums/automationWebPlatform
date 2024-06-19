@@ -65,7 +65,7 @@ public class Reporte {
     }
 
     public static void initReport() {
-        nameFichero=("Report/ReportePibox"+System.getProperty("tags")+".html").replace("null","").replace(" and not @Deprecated","").replace("@","");
+        nameFichero=("Report/ReporteWeb"+System.getProperty("tags")+".html").replace("null","").replace(" and not @Deprecated","").replace("@","");
         File repositorio1 = new File("Report/");
         if (repositorio1.exists()) {
             for (File f1 : repositorio1.listFiles()) {

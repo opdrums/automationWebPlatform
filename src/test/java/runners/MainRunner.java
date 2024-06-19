@@ -4,8 +4,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
-import utils.lectura_data.BeforeSuite;
-import utils.lectura_data.DataToFeature;
+import utils.readDate.BeforeSuite;
+import utils.readDate.DataToFeature;
 import utils.reporting.Reporte;
 
 import java.io.IOException;

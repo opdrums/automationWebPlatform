@@ -1,4 +1,4 @@
-package utils.lectura_data;
+package utils.readDate;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -67,7 +67,7 @@ public class DataToFeature {
                     for (String valor : encabezadosIni)
                         encabezados.add(valor.trim());
                     if(!excelFilePath.equals(excelFilePathActual))
-                        excelData = new LectorExcel().getData(excelFilePath, 0);
+                        excelData = new ReadToExcel().getData(excelFilePath, 0);
                     excelFilePathActual=excelFilePath;
 
 //	                    String columnHeader = "";

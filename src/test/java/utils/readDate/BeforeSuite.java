@@ -1,7 +1,7 @@
 /**
  * @since 27/11/2017
  */
-package utils.lectura_data;
+package utils.readDate;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

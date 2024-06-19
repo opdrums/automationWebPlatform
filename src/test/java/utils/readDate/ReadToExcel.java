@@ -1,4 +1,4 @@
-package utils.lectura_data;
+package utils.readDate;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -11,7 +11,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LectorExcel {
+public class ReadToExcel {
     /**
      * Obtiene los datos de un archivo de excel, teniendo en cuenta el nombre de la
      * hoja

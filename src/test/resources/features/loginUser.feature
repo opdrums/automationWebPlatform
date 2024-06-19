@@ -10,4 +10,4 @@ Feature: How automation wants to user login
     When seleccionar el elemento del menu <main>
     Examples:
       |email|password|main|
-      |himlaya@gmail.com|123456|Ayuda|
+      |himalaya@gmail.com|123456|Ayuda|
