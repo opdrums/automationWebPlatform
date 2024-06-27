@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import utils.reporting.Reporte;
+import utils.reporting.Report;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ public class DriverFactory {
             driver.switchTo().window(tabs2.get(numeroPestana));
             return true;
         } catch (Exception e) {
-            Reporte.reports("FAIL", "No se pudo cambiar a la nueva pestaña");
+            Report.reports("FAIL", "No se pudo cambiar a la nueva pestaña");
             return false;
         }
     }

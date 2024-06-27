@@ -12,7 +12,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 
-public class Reporte {
+public class Report {
     private static String nameFichero;
     private static ExtentTest test;
     private static ExtentReports htmlReporter;
@@ -65,7 +65,7 @@ public class Reporte {
     }
 
     public static void initReport() {
-        nameFichero=("Report/ReporteWeb"+System.getProperty("tags")+".html").replace("null","").replace(" and not @Deprecated","").replace("@","");
+        nameFichero=("Report/ReportWeb"+System.getProperty("tags")+".html").replace("null","").replace(" and not @Deprecated","").replace("@","");
         File repositorio1 = new File("Report/");
         if (repositorio1.exists()) {
             for (File f1 : repositorio1.listFiles()) {
@@ -90,7 +90,7 @@ public class Reporte {
         }
     }
 
-    public static void reportarCasoFallido(String caso) {
+    public static void reportCaseFail(String caso) {
         try {
             String ruta = "Report/CasosFallidos.txt";
             File file = new File(ruta);

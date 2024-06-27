@@ -1,9 +1,5 @@
 package pageObjects;
 
-import net.serenitybdd.core.annotations.findby.FindBy;
-
-import org.openqa.selenium.WebElement;
-
 public class registerUserPo extends pageObjects.WebBasePage {
 
     private String mainElement = "//span[normalize-space()='Replaceable']";
@@ -22,19 +18,19 @@ public class registerUserPo extends pageObjects.WebBasePage {
 
 
     public void formUserRegister(String name, String email, String phone, String password){
-        element(fieldName).sendKeys(name);
-        element(fieldEmail).sendKeys(email);
-        element(fieldPhone).sendKeys(phone);
-        element(fieldPassword).sendKeys(password);
+        sendTextLocator(fieldName, name);
+        sendTextLocator(fieldEmail, email);
+        sendTextLocator(fieldPhone, phone);
+        sendTextLocator(fieldPassword, password);
     }
 
     public void selectCountry(String elm){
-        element(buttonCountry).click();
+        clickELementLocator(buttonCountry);
         clickElementList(mainElement,elm);
     }
 
     public void clickCheckBossAndRegisterSuccess(String elm){
-        element(clickButtonCheckBoss).click();
+        clickELementLocator(clickButtonCheckBoss);
         clickElementList(clickButtonRegister,elm);
     }
 

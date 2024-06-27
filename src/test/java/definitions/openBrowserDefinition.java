@@ -5,7 +5,7 @@ import net.thucydides.core.annotations.Steps;
 import steps.browserStep;
 
 public class openBrowserDefinition {
-    private static String ambiente = "";
+    private static String atmosphere = "";
     @Steps
     browserStep browserStep;
 
@@ -14,9 +14,9 @@ public class openBrowserDefinition {
     }
 
     @Given("^open to web (.*)$")
-    public void ingresarLatamAmbiente(String ambiente){
-        openBrowserDefinition.ambiente = ambiente.trim();
-        browserStep.openNavegate(openBrowserDefinition.ambiente.toUpperCase());
-        browserStep.openNavegate(ambiente);
+    public void openLatam(String atmosphere){
+        openBrowserDefinition.atmosphere = atmosphere.trim();
+        browserStep.openNavegate(openBrowserDefinition.atmosphere.toUpperCase());
+        browserStep.openNavegate(atmosphere);
     }
 }

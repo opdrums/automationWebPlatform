@@ -6,7 +6,7 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.runner.RunWith;
 import utils.readDate.BeforeSuite;
 import utils.readDate.DataToFeature;
-import utils.reporting.Reporte;
+import utils.reporting.Report;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import java.io.IOException;
 @CucumberOptions(
         features = "src/test/resources/features"
         ,glue = "definitions"
-        ,tags = "@login"
+        ,tags = "@openWeb"
         ,monochrome = true
         ,snippets = SnippetType.CAMELCASE
 )
@@ -22,7 +22,7 @@ public class MainRunner {
 
     @BeforeSuite
     public static void test() throws InvalidFormatException, IOException {
-        Reporte.initReport();
+        Report.initReport();
         DataToFeature.overrideFeatureFiles("./src/test/resources/features");
     }
 }
