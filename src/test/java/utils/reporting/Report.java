@@ -92,11 +92,11 @@ public class Report {
 
     public static void reportCaseFail(String caso) {
         try {
-            String ruta = "Report/CasosFallidos.txt";
+            String ruta = "Report/CaseFail.txt";
             File file = new File(ruta);
             if (!file.exists()) {
                 file.createNewFile();
-                caso="CASOS FALLIDOS EN LA REGRESIÓN AUTOMATIZADA:\n\n"+caso;
+                caso="FAILED CASES IN AUTOMATED REGRESSION:\n\n"+caso;
                 FileWriter fw = new FileWriter(file,true);
             }
             FileWriter fw = new FileWriter(file,true);
