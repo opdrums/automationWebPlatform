@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '8'
-          distribution: 'adoptopenjdk'
+          distribution: 'adoptium'
 
       # 3. Instalar Google Chrome y ChromeDriver
       - name: Install Google Chrome and ChromeDriver
