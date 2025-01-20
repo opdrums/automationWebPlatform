@@ -1,4 +1,4 @@
 package pageObjects;
 
-public class openBrowserPo extends WebBasePage {
+public class openBrowserPo extends WebBasePage{
 }

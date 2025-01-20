@@ -57,7 +57,7 @@ public class WebBasePage extends PageObject {
     }
 
     //metodo para dar click a elemento
-    public void clickELementLocator(String locator){
+    public void clickElementLocator(String locator){
         WebElement element = getElementXpath(locator);
         waitUntilElementIsVisible(element);
         element.click();
@@ -71,14 +71,14 @@ public class WebBasePage extends PageObject {
     }
 
     //metodo para validar un elemento de una lista
-    public boolean validateELmentMain(String locator,String elm){
+    public boolean validateElmentMain(String locator,String elm){
         WebElement element = getElementXpathReplecable(locator, elm);
         waitUntilElementIsVisibleNonThrow(element, 10);
         return isVisible(element);
     }
 
     //metodo para validar un elemento
-    public boolean validateELmentLocator(String locator){
+    public boolean validateElmentLocator(String locator){
         WebElement element = getElementXpath(locator);
         waitUntilElementIsVisibleNonThrow(element,10);
         return isVisible(element);
@@ -97,6 +97,16 @@ public class WebBasePage extends PageObject {
         waitUntilElementIsVisible(element);
         return element.getText();
     }
+
+    //metodo para obtener el texto por partes
+    public String getTextElmLocalator(String locator){
+        WebElement element = getElementXpath(locator);
+        waitUntilElementIsVisible(element);
+        String fullText = element.getText();
+        String[] parts = fullText.split(" : ");
+        return parts.length > 1 ? parts[1].trim() : "";
+    }
+
 
     //metodo para hacer una espera implicita y espera que se ha visible si no manda un excepcion
     public void waitUntilElementIsVisible(WebElement element) {

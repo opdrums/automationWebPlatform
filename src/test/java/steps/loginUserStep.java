@@ -15,23 +15,37 @@ public class loginUserStep {
     }
 
     @Step
-    public void clickButtonAlert(){
-        loginUserPo.clickButtonAlertDeliviry();
+    public void formularioLoginPaso(String email, String password){
+        loginUserPo.formularioLogin(email, password);
     }
 
     @Step
-    public void formLogin(String email, String password){
-        loginUserPo.FormUserLogin(email, password);
+    public void clickBotonLogintPaso(){
+        loginUserPo.ClickBotonLogin();
     }
 
     @Step
-    public void validationLogin(String elm){
-        if(loginUserPo.validateElement(elm)){
-            Report.reports("PASS", "element found list: " + loginUserPo.getTextElement(elm), Report.takeSnapShot(DriverFactory.getDriver()));
-            loginUserPo.clickElementMain(elm);
-        } else if (!loginUserPo.validateElement(elm)) {
-            Report.reports("FAIL", "Not found element list", Report.takeSnapShot(DriverFactory.getDriver()));
-            Assert.fail("Not found element list");
+    public void formularioLoginOrangePaso(){
+        loginUserPo.formularioLogin(loginUserPo.obtenerTextoFormularioUsuario(), loginUserPo.obtenerTextoFormularioPassword());
+    }
+
+   @Step
+    public void validacionTextoLogin(){
+        if(!loginUserPo.validacionLogin()){
+            Report.reports("FAIL", "elemento no encontrado", Report.takeSnapShot(DriverFactory.getDriver()));
+            Assert.fail("elemento no encontrado");
         }
+
+        Report.reports("PASS", "Elemento encontrado al hacer login",Report.takeSnapShot(DriverFactory.getDriver()));
+    }
+
+    @Step
+    public void validacionCrdencialesFallidoPaso(){
+        if(!loginUserPo.validacionCredencialesInvalidas()){
+            Report.reports("FAIL", "elemento no encontrado el texto" + loginUserPo.obtenerTextoCredencialesInvalidas(), Report.takeSnapShot(DriverFactory.getDriver()));
+            Assert.fail("elemento no encontrado");
+        }
+
+        Report.reports("PASS", "Elemento encontrado al hacer login" + loginUserPo.obtenerTextoCredencialesInvalidas(),Report.takeSnapShot(DriverFactory.getDriver()));
     }
 }

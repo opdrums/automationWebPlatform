@@ -13,7 +13,7 @@ public class openBrowserDefinition {
         this.browserStep = new browserStep();
     }
 
-    @Given("^open to web (.*)$")
+    @Given("^que el usuario está en la página web(.*)$")
     public void openLatam(String atmosphere){
         openBrowserDefinition.atmosphere = atmosphere.trim();
         browserStep.openNavegate(openBrowserDefinition.atmosphere.toUpperCase());

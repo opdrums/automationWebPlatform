@@ -31,15 +31,15 @@ public class Hooks {
     //metodo que crea un scenario, donde cierra el navegador envia un reporte si pasa o falla y cierra el navegador
     public void quitDriver(Scenario scenario){
         if (scenario.isFailed()) {
-            Report.reportCaseFail(("MODULO: "+System.getProperty("tags")+" --> ESCENARIO: "+scenario.getName()).replace("null","Pibox"));
+            Report.reportCaseFail(("MODULO: "+System.getProperty("tags")+" --> ESCENARIO: "+scenario.getName()).replace("null","Web"));
             if (DriverFactory.getDriver() == null) {
-                Report.reports("FAIL", "The automated flow is terminated due to the error generated!");
+                Report.reports("FAIL", "El flujo automatizado se da por finalizado debido al error generado.!");
             } else {
                 DriverFactory.getDriver().manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-                Report.reports("FAIL", "The automated flow is terminated due to the error generated!", Report.takeSnapShot(DriverFactory.getDriver()));
+                Report.reports("FAIL", "\n" + "El flujo automatizado se da por finalizado debido al error generado.!", Report.takeSnapShot(DriverFactory.getDriver()));
             }
         } else {
-            Report.reports("PASS", "The automated flow is completed successfully!");
+            Report.reports("PASS", "El flujo de automatizacion termino de forma exitosa!", Report.takeSnapShot(DriverFactory.getDriver()));
         }
         Report.finishReport();
         DriverFactory.quitDriver();

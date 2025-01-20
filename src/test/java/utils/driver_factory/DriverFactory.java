@@ -28,6 +28,8 @@ public class DriverFactory {
             System.setProperty("webdriver.gecko.driver", controlador);
             driver = new FirefoxDriver();
             }
+
+
         return driver;
     }
 

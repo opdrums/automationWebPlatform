@@ -4,36 +4,41 @@ package pageObjects;
 
 public class loginUserPo extends WebBasePage {
 
-    private String mainElement = "//span[normalize-space()='Replaceable']";
-    private String buttonConfirmenAlert = "//*[@id='hs-eu-confirmation-button']";
-    private String fieldEmail = "//input[@name='email']";
-    private String fielPassword ="//input[@name='password']";
-    private String buttonLogin ="//button[@type='submit']//span[@class='MuiButton-label'][normalize-space()='Ingresar']";
+    private String campoEMail = "//input[@name='username']";
+    private String campoPassword ="//input[@name='password']";
+    private String botonLogin ="//div[2]/form/div[3]/button";
+    private String textoEmail = "//header/div[1]/div[3]/ul/li/span/p";
+    private String credencialesInvalidas = "//div[2]/div/div[1]/div[1]/p";
+    private String obtenerTextoUsuario = "//div/div[2]/div[2]/div/div/p[1]";
+    private String obtenerTextoPassword= "//div/div[2]/div[2]/div/div/p[2]";
 
-
-    public void clickButtonAlertDeliviry(){
-        waitUntilElementIsVisible(element(buttonConfirmenAlert));
-        clickELementLocator(buttonConfirmenAlert);
+    public void formularioLogin(String email, String password){
+        sendTextLocator(campoEMail, email);
+        sendTextLocator(campoPassword, password);
     }
 
-    public void FormUserLogin(String email, String password){
-        sendTextLocator(fieldEmail, email);
-        sendTextLocator(fielPassword, password);
-        waitUntilElementIsVisible(element(buttonLogin));
-        clickELementLocator(buttonLogin);
+    public void  ClickBotonLogin(){
+        waitUntilElementIsVisible(element(botonLogin));
+        clickElementLocator(botonLogin);
     }
 
-    public void clickElementMain(String elm){
-        clickElementList(mainElement, elm);
+    public boolean validacionLogin(){
+        return validateElmentLocator(textoEmail);
     }
 
-    public boolean validateElement(String elm){
-        waitTime(20);
-        return validateELmentMain(mainElement, elm);
+    public String obtenerTextoCredencialesInvalidas(){
+        return  getTextElementLocator(credencialesInvalidas);
     }
 
-    public String getTextElement(String elm){
-        return getTextElementMain(mainElement,elm);
+    public boolean validacionCredencialesInvalidas(){
+        return validateElmentLocator (credencialesInvalidas);
     }
 
+    public  String obtenerTextoFormularioUsuario(){
+        return getTextElmLocalator(obtenerTextoUsuario);
+    }
+
+    public  String obtenerTextoFormularioPassword(){
+        return  getTextElmLocalator(obtenerTextoPassword);
+    }
 }
